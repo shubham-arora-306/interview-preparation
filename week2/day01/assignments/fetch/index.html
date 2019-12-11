@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <button id='dog'>dog</button><br/>
+    <img src="" id='dogimage' alt="dog"/>
+    <script>
+      document.getElementById('dog').addEventListener("click",loadimage)
+
+        function loadimage(){
+            fetch('https://dog.ceo/api/breeds/image/random')
+            .then(function (dat){
+                return dat.json()
+            }).then(function(x){
+                document.getElementById('dogimage').src = x.message
+            })
+        }
+    </script>
+  </body>
+</html>
